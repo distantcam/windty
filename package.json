@@ -1,0 +1,42 @@
+{
+  "name": "windty",
+  "version": "1.0.0",
+  "description": "Simple 11ty template with tailwind",
+  "scripts": {
+    "start": "run-p start:*",
+    "start:eleventy": "eleventy --serve",
+    "start:postcss": "postcss src/styles/*.css --dir _site --watch",
+    "build": "run-s clean build:eleventy build:postcss",
+    "build:eleventy": "cross-env ELEVENTY_PRODUCTION=true eleventy",
+    "build:postcss": "cross-env NODE_ENV=production postcss src/styles/*.css --dir _site",
+    "clean": "rimraf _site"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/distantcam/windty.git"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "tailwind"
+  ],
+  "author": "Cam MacFarland",
+  "license": "Unlicense",
+  "homepage": "https://github.com/distantcam/windty#readme",
+  "bugs": {
+    "url": "https://github.com/distantcam/windty/issues"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "postcss-nested": "^5.0.3",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.0.2"
+  }
+}
