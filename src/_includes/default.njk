@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <!-- https://github.com/joshbuchea/HEAD -->
 
-  <!-- https://github.com/joshbuchea/HEAD -->
+    <!-- Recommended -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Recommended -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta -->
+    <meta name="description" content="{{ metadata.description }}" />
+    <meta name="generator" content="11ty" />
 
-  <!-- Elements -->
-  <meta charset="utf-8">
+    <!-- Icons -->
+    <!-- https://favicon.io/ -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ '/apple-touch-icon.png' | url }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ '/favicon-32x32.png' | url }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ '/favicon-16x16.png' | url }}"
+    />
+    <link rel="manifest" href="{{ '/site.webmanifest' | url }}" />
 
-  <!-- Meta -->
-  <meta name="description" content="{{ metadata.description }}">
-  <meta name="generator" content="11ty">
+    <title>{{ title or metadata.title }}</title>
 
-  <!-- Icons -->
-  <!-- https://favicon.io/ -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | url }}">
-  <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+    <link rel="stylesheet" href="{{ '/site.css' | url }}" />
+  </head>
 
-
-  <title>{{ title or metadata.title }}</title>
-
-  <link rel="stylesheet" href="{{ '/site.css' | url }}">
-</head>
-
-<body class="font-sans leading-normal tracking-normal text-gray-900">
-
-  {{ content | safe }}
-
-</body>
+  <body class="font-sans leading-normal tracking-normal text-gray-900">
+    {{ content | safe }}
+  </body>
 </html>
