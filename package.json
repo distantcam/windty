@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
-    "autoprefixer": "^10.4.4",
+    "autoprefixer": "^10.4.5",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.7",
     "html-minifier": "^4.0.0",
