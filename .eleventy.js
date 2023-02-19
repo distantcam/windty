@@ -5,8 +5,6 @@ module.exports = function(eleventyConfig) {
 
   if (process.env.ELEVENTY_PRODUCTION) {
     eleventyConfig.addTransform("htmlmin", htmlminTransform);
-  } else {
-    eleventyConfig.setBrowserSyncConfig({ callbacks: { ready: browserSyncReady }});
   }
 
   // Passthrough
@@ -27,17 +25,6 @@ module.exports = function(eleventyConfig) {
     pathPrefix
   }
 };
-
-function browserSyncReady(err, bs) {
-  bs.addMiddleware("*", (req, res) => {
-    const content_404 = fs.readFileSync('_site/404.html');
-    // Add 404 http status code in request header.
-    res.writeHead(404, { "Content-Type": "text/html; charset=ETF-8" });
-    // Provides the 404 content without redirect.
-    res.write(content_404);
-    res.end();
-  });
-}
 
 function htmlminTransform(content, outputPath) {
   if( outputPath.endsWith(".html") ) {
