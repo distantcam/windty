@@ -21,7 +21,8 @@ jobs:
 
       - name: ✔️ Merge PR
         if: |
-          steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major'
+          steps.dependabot-metadata.outputs.package-ecosystem == 'github-actions'
+          || steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
