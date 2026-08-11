@@ -48,7 +48,7 @@ jobs:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v6
       - name: Restore cache
         uses: actions/cache@v3
         with:
