@@ -27,7 +27,7 @@
     "url": "https://github.com/distantcam/windty/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy": "^3.1.7",
     "autoprefixer": "^10.6.1",
     "cross-env": "^10.1.0",
     "cssnano": "^9.8.0",
